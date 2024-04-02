@@ -1,20 +1,15 @@
-variable "distribution_name" {
-  description = "CloudFront Distribution Name"
-  type        = string
-}
-
 variable "bucket_name" {
   description = "S3 Bucket Name"
   type        = string
 }
 
-variable "bucket_domain_name" {
-  description = "S3 Bucket Domain Name"
+variable "source_path" {
+  description = "The path to the source files"
   type        = string
 }
 
-variable "bucket_origin_id" {
-  description = "S3 Bucket Origin ID"
+variable "distribution_name" {
+  description = "CloudFront Distribution Name"
   type        = string
 }
 
@@ -60,10 +55,15 @@ variable "distribution_forwarded_values_query_string" {
 
 variable "distribution_forwarded_values_cookies_forward" {
   description = "The forwarded values cookies forward"
-  type        = string
+  type        = bool
 }
 
 variable "distribution_viewer_certificate_cloudfront_default_certificate" {
-  description = "The viewer certificate cloudfront default certificate"
-  type        = bool
+  description = "The viewer certificate"
+  type        = string
+}
+
+variable "cloudflare_zone" {
+  description = "The Cloudflare Zone"
+  type        = string
 }
