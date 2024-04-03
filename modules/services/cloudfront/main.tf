@@ -42,8 +42,8 @@ resource "aws_cloudfront_distribution" "distribution" {
 }
 
 resource "aws_cloudfront_origin_access_control" "Site_Access" {
-  name                              = "Security_Pillar100_CF_S3_OAC"
-  description                       = "OAC setup for security pillar 100"
+  name                              = var.bucket_name
+  description                       = "OAC setup for the distribution"
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"

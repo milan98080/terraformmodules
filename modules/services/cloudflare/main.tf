@@ -7,7 +7,9 @@ terraform {
   }
 }
 
-provider "cloudflare" {}
+provider "cloudflare" {
+  retries = 2
+}
 
 data "cloudflare_zone" "zone" {
   name = var.zone
